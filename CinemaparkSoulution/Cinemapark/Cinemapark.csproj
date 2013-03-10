@@ -110,6 +110,9 @@
     <Compile Include="Views\AboutUserControl.xaml.cs">
       <DependentUpon>AboutUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PreferencesUserControl.xaml.cs">
+      <DependentUpon>PreferencesUserControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -138,6 +141,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AboutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PreferencesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

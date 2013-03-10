@@ -3,9 +3,11 @@ using Callisto.Controls;
 using Cinemapark.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.ApplicationSettings;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -90,13 +92,27 @@ namespace Cinemapark
 				{
 					var settings = new SettingsFlyout();
 					settings.Content = new AboutUserControl();
-					//settings.HeaderBrush = new SolidColorBrush(_background);
-					//settings.Background = new SolidColorBrush(_background);
+					settings.HeaderBrush = new SolidColorBrush(Colors.Magenta);
+					settings.Background = new SolidColorBrush(Colors.LightGreen);
+					settings.ContentBackgroundBrush = new SolidColorBrush(Colors.LightGreen);
 					settings.HeaderText = "About";
 					settings.IsOpen = true;
 				});
 
 			args.Request.ApplicationCommands.Add(about);
+
+			var preferences = new SettingsCommand("preferences", "Preferences", (handler) =>
+			{
+				var settings = new SettingsFlyout();
+				settings.Content = new PreferencesUserControl();
+				settings.HeaderBrush = new SolidColorBrush(Colors.Magenta);
+				settings.Background = new SolidColorBrush(Colors.LightGreen);
+				settings.ContentBackgroundBrush = new SolidColorBrush(Colors.LightGreen);
+				settings.HeaderText = "Preferences";
+				settings.IsOpen = true;
+			});
+
+			args.Request.ApplicationCommands.Add(preferences);
 		}
 	}
 }

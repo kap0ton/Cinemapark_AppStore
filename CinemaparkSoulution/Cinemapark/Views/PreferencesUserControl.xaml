@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Cinemapark.Views.AboutUserControl"
+    x:Class="Cinemapark.Views.PreferencesUserControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,10 +8,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-	<Grid Background="LightGreen">
-		<StackPanel>
-			<TextBlock Text="Cinemapark" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.667" />
-			<TextBlock Text="Demo Version" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" />
-		</StackPanel>
+	<Grid>
+		<ToggleSwitch x:Name="Remember" Header="Remember where I was" />
 	</Grid>
 </UserControl>
